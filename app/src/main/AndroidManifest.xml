@@ -31,6 +31,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.CouponActivity" />
+        <activity android:name=".activity.DriverRecordActivity" />
+        <activity android:name=".activity.SettingActivity" />
+        <activity android:name=".activity.AccountAndSecurityActivity" />
+        <activity android:name=".activity.SetPhoneActivity" />
+        <activity android:name=".activity.SetLoginPasswordActivity" />
 
         <meta-data
             android:name="com.amap.api.v2.apikey"

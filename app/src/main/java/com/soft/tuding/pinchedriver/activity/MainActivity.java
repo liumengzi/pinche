@@ -1,6 +1,7 @@
 package com.soft.tuding.pinchedriver.activity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -32,6 +33,12 @@ public class MainActivity extends BaseActivity implements EasyPermissions
     LinearLayout llReceiverDispatcher;
     @Bind(R.id.tv_start_receiverorder)
     TextView tvStartReceiverorder;
+    @Bind(R.id.ll_coupon)
+    LinearLayout ll_coupon;
+    @Bind(R.id.ll_driver_record)
+    LinearLayout ll_driver_record;
+    @Bind(R.id.ll_setting)
+    LinearLayout ll_setting;
     private AmapLocationUtils amapLocationUtils;
     private AMap map;
     private boolean isExit;
@@ -67,6 +74,9 @@ public class MainActivity extends BaseActivity implements EasyPermissions
     protected void setViews() {
         tvStartReceiverorder.setOnClickListener(this);
         tvArriveStartpoint.setOnClickListener(this);
+        ll_coupon.setOnClickListener(this);
+        ll_driver_record.setOnClickListener(this);
+        ll_setting.setOnClickListener(this);
     }
 
     @Override
@@ -122,7 +132,7 @@ public class MainActivity extends BaseActivity implements EasyPermissions
     public void onLocateSuccess(AMapLocation amapLocation) {
         double latitude = amapLocation.getLatitude();
         double longitude = amapLocation.getLongitude();
-      //  amapLocationUtils.setLocationMark(map, this, latitude, longitude);
+        //  amapLocationUtils.setLocationMark(map, this, latitude, longitude);
         amapLocationUtils.setMapCenter(map, this, latitude, longitude);
         amapLocationUtils.setDefaultLocationImg(map);
     }
@@ -147,6 +157,15 @@ public class MainActivity extends BaseActivity implements EasyPermissions
                 } else if (point.equals("接到乘客")) {
                     tvArriveStartpoint.setText("到达终点");
                 }
+                break;
+            case R.id.ll_coupon:
+                startActivity(new Intent(this, CouponActivity.class));
+                break;
+            case R.id.ll_driver_record:
+                startActivity(new Intent(this, DriverRecordActivity.class));
+                break;
+            case R.id.ll_setting:
+                startActivity(new Intent(this, SettingActivity.class));
                 break;
         }
     }

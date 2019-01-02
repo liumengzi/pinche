@@ -37,6 +37,7 @@
         <activity android:name=".activity.AccountAndSecurityActivity" />
         <activity android:name=".activity.SetPhoneActivity" />
         <activity android:name=".activity.SetLoginPasswordActivity" />
+        <activity android:name=".activity.WalletActivity" />
 
         <meta-data
             android:name="com.amap.api.v2.apikey"

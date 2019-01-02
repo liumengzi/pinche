@@ -39,6 +39,8 @@ public class MainActivity extends BaseActivity implements EasyPermissions
     LinearLayout ll_driver_record;
     @Bind(R.id.ll_setting)
     LinearLayout ll_setting;
+    @Bind(R.id.ll_wallet)
+    LinearLayout ll_wallet;
     private AmapLocationUtils amapLocationUtils;
     private AMap map;
     private boolean isExit;
@@ -77,6 +79,7 @@ public class MainActivity extends BaseActivity implements EasyPermissions
         ll_coupon.setOnClickListener(this);
         ll_driver_record.setOnClickListener(this);
         ll_setting.setOnClickListener(this);
+        ll_wallet.setOnClickListener(this);
     }
 
     @Override
@@ -166,6 +169,9 @@ public class MainActivity extends BaseActivity implements EasyPermissions
                 break;
             case R.id.ll_setting:
                 startActivity(new Intent(this, SettingActivity.class));
+                break;
+            case R.id.ll_wallet:
+                startActivity(new Intent(this, WalletActivity.class));
                 break;
         }
     }
